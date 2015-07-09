@@ -1,0 +1,67 @@
+<style>td {padding-left:10px !important;} th {padding-left:10px !important;}.inside td {padding-bottom: 10px;}</style>
+    <div class="accordion" id="accordion2">
+    <div class="accordion-group">
+    <div class="panel panel-info accordion-heading">
+    <div class="panel-heading">
+     
+    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+    <h4>Mailchimp</h4>
+    </a>
+    </div>
+    <div id="collapseOne" class="accordion-body collapse in">
+    <div class="accordion-inner">
+
+<?php
+mailchimp_settings_page_output();
+ echo ' </div>
+</div>
+</div>
+</div>'; 
+ echo ' </div>'; 
+ ?>
+
+ <div class="accordion" id="accordion2">
+    <div class="accordion-group">
+   <div class="panel panel-info accordion-heading">
+    <div class="panel-heading">
+    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+    <h4>Campaign Monitor Integration</h4>
+    </a>
+    </div>
+    <div id="collapseTwo" class="accordion-body collapse in">
+    <div class="accordion-inner">
+ 
+ <?php
+ cmdr_plugin_page();
+ echo ' </div>
+</div>
+</div>
+</div>';
+ echo ' </div>'; 
+?>
+
+ <div class="accordion" id="accordion2">
+    <div class="accordion-group">
+ <div class="panel panel-info accordion-heading">
+    <div class="panel-heading">
+    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
+    <h4>AWeber Integration</h4>
+    </a>
+    </div>
+    <div id="collapseThree" class="accordion-body collapse in">
+    <div class="accordion-inner">
+ 
+ <?php
+ global $aweber_webform_plugin;
+ $aweber_webform_plugin->printAdminPage();
+ echo ' </div>
+</div>
+</div>
+</div>';
+echo '</div>
+ </div>';
+ echo '</div>
+ </div>';
+  echo ' </div>'; 
+
+  ?>

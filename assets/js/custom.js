@@ -1,0 +1,1 @@
+$(document).ready(function(){$("#example tfoot th").each(function(){var e=$("#example thead th").eq($(this).index()).text();$(this).html('<input type="text" placeholder="Search '+e+'" />')});var e=$("#example").DataTable();e.columns().eq(0).each(function(t){$("input",e.column(t).footer()).on("keyup change",function(){e.column(t).search(this.value).draw()})})});

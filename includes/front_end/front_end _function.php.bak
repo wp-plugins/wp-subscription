@@ -1,0 +1,129 @@
+<?php
+ function wp_subscribe_aweber_new_signup_user($full_target_list_name,$fname,$lname,$email_to_subscribe){
+	
+	$target_list_id=$full_target_list_name;
+	$wp_aff_aweber_access_keys = get_option('AWeberWebformPluginAdminOptions');
+	
+
+	if (!class_exists('AWeberAPI')){//TODO - change the class name to "WP_AFF_AWeberAPI" to avoid conflict with others
+		include_once(WP_PLUGIN_URL.'aweber-web-form-widget/php/aweber_api/aweber_api.php');
+	
+	}
+	
+	$aweber = new AWeberAPI($wp_aff_aweber_access_keys['consumer_key'], $wp_aff_aweber_access_keys['consumer_secret']);
+	
+	
+	$account = $aweber->getAccount($wp_aff_aweber_access_keys['access_key'], $wp_aff_aweber_access_keys['access_secret']);//Get Aweber account
+
+	$account_id = $account->id;
+	$mylists = $account->lists;
+	
+	
+	$target_list_name = str_replace("@aweber.com", "", $full_target_list_name);
+	
+
+	$list_name_found = false;
+	foreach ($mylists as $list) {
+		if($list->id == $target_list_id){
+			$list_name_found = true;
+			try {//Create a subscriber			    
+			    $params = array(
+			        'email' => $email_to_subscribe,
+			        'name' => $fname.' '.$lname,
+			    );
+			    $subscribers = $list->subscribers;
+			    $new_subscriber = $subscribers->create($params);
+			   		}catch (Exception $exc) {
+				
+				
+			}    
+		}
+	}
+	return;
+	
+}
+$return='<style type="text/css">
+.form-style-1 {
+    margin:10px auto;
+    max-width: 400px;
+    padding: 20px 12px 10px 20px;
+    font: 13px "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+.form-style-1 li {
+    padding: 0;
+    display: block;
+    list-style: none;
+    margin: 10px 0 0 0;
+}
+.form-style-1 label{
+    margin:0 0 3px 0;
+    padding:0px;
+    display:block;
+    font-weight: bold;
+}
+.form-style-1 input[type=text], 
+.form-style-1 input[type=date],
+.form-style-1 input[type=datetime],
+.form-style-1 input[type=number],
+.form-style-1 input[type=search],
+.form-style-1 input[type=time],
+.form-style-1 input[type=url],
+.form-style-1 input[type=email],
+textarea, 
+select{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    border:1px solid #BEBEBE;
+    padding: 7px;
+    margin:0px;
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    -o-transition: all 0.30s ease-in-out;
+    outline: none;  
+}
+.form-style-1 input[type=text]:focus, 
+.form-style-1 input[type=date]:focus,
+.form-style-1 input[type=datetime]:focus,
+.form-style-1 input[type=number]:focus,
+.form-style-1 input[type=search]:focus,
+.form-style-1 input[type=time]:focus,
+.form-style-1 input[type=url]:focus,
+.form-style-1 input[type=email]:focus,
+.form-style-1 textarea:focus, 
+.form-style-1 select:focus{
+    -moz-box-shadow: 0 0 8px #88D5E9;
+    -webkit-box-shadow: 0 0 8px #88D5E9;
+    box-shadow: 0 0 8px #88D5E9;
+    border: 1px solid #88D5E9;
+}
+.form-style-1 .field-divided{
+    width: 49%;
+}
+
+.form-style-1 .field-long{
+    width: 100%;
+}
+.form-style-1 .field-select{
+    width: 100%;
+}
+.form-style-1 .field-textarea{
+    height: 100px;
+}
+.form-style-1 input[type=submit], .form-style-1 input[type=button]{   
+    padding: 8px 15px 8px 15px;
+    border: none;
+    color: #fff;
+}
+.form-style-1 input[type=submit]:hover, .form-style-1 input[type=button]:hover{
+    background: #4691A4;
+    box-shadow:none;
+    -moz-box-shadow:none;
+    -webkit-box-shadow:none;
+}
+.form-style-1 .required{
+    color:red;
+}
+</style>';
+>?

@@ -1,0 +1,72 @@
+=== WP Subscription ===
+Contributors: Prashant Walke
+Donate link:https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=387BZU5UNQ4LA	
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: aweber, mailchimp, Campaign Monitor,newsletter, subscribe, subscribe widget, subscription, subscription box
+Requires at least: 3.1+
+Tested up to: 4.2.2
+Stable tag: trunk
+
+WP Subscribe is a simple but powerful subscription plugin which supports MailChimp, Aweber and Campaign Monitor.
+
+== Description ==
+
+If you aren’t building an email list, you’re missing out on the most powerful and consistent way to drive repeat visitors and customers to your website or blog. With an email list, you become less and less dependent on external sources of traffic, and gain more ability to interact with your blog’s audience.
+
+<b> Features included </b>
+<ul>
+<li>Integration With :Aweber, Mailchimp, Campaign Monitor </li>
+
+<li>Maintain Your Own Subscription list </li>
+
+<li>CSV export</li>
+
+<li>Dashboard analysis using graph</li>
+
+<li>Simple to configure(very less configuration)</li>
+
+<li>Lightweight. </li>
+
+<li>Fully responsive.</li>
+
+<li>Options to change text showing in subscription box. </li>
+
+<li>Shortcode for newsletter form </li>
+
+<a href="http://www.wpseeds.com/product/wp_subscription" target="_blank">Get Pro 'WP Subscription' Plugin</a>
+
+== Installation ==
+1. Download the plugin file, unzip and place it in your wp-content/plugins/ folder. You can alternatively upload it via the WordPress plugin backend.
+2. Activate the plugin through the 'Plugins' menu in WordPress.
+3. WP Database Backup menu will appear in Dashboard->WP Subscription. Click on it & get started to use.
+4. Refer to the for <a href="http://www.wpseeds.com/wp-subscription//">More Information</a>.
+
+== Screenshots ==
+
+screenshot1.jpg
+screenshot2.jpg
+screenshot3.jpg
+screenshot4.jpg
+screenshot5.jpg
+screenshot6.jpg
+
+Refer to the for <a href="http://www.wpseeds.com/wp-subscription/">Screenshots and More Information</a>.
+
+== Changelog ==
+
+= 1.0.0 = 
+*Plugin Created
+
+
+== Frequently Asked Questions ==
+ 
+ Q.want more featur?
+ If you want more feature then
+ Drop Mail :walke.prashant28@gmail.com
+  
+== Upgrade Notice ==
+
+
+== Official Site ==
+For <a href="http://www.wpseeds.com/wp-subscription/">More Information</a> Or Advanced feature drop mail:walke.prashant28@gmail.com
